@@ -1,0 +1,36 @@
+$black: #323c46;
+$gray: #71787f;
+$grayLight: #f1f2f2;
+$blue: #85b1f9;
+$blueLight: #d9eaff;
+$pink: #ffc1c1;
+$yellow: #fff48e;
+$red: #ee6956;
+$green: #c3f3e2;
+$systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+$LabGrotesque: "LabGrotesque", $systemfont;
+$Roboto: "Roboto", $systemfont;
+$OpenSans: "OpenSans", $systemfont;
+
+@mixin font-face($font-family, $file-name, $font-weight, $font-style) {
+    @font-face {
+        font-family: $font-family;
+        src: url("../fonts/#{$file-name}.eot");
+        src: url("../fonts/#{$file-name}.eot?#iefix") format("embedded-opentype"),
+            url("../fonts/#{$file-name}.woff2") format("woff2"), url("../fonts/#{$file-name}.woff") format("woff"),
+            url("../fonts/#{$file-name}.ttf") format("truetype");
+        font-weight: $font-weight;
+        font-style: $font-style;
+        font-display: swap;
+    }
+}
+
+@include font-face("LabGrotesque", "LabGrotesque-Medium", 500, normal);
+@include font-face("Roboto", "Roboto-Regular", 400, normal);
+
+@media (min-width: 480px) {
+	@include font-face("OpenSans", "OpenSans-Regular", 400, normal);
+	@include font-face("OpenSans", "OpenSans-Bold", 700, normal);
+}
+
+
